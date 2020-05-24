@@ -7,15 +7,15 @@ public class Building {
     private Address address;
     private String telephoneNumber;
 
+    public Building(String name, Address address) {
+        this.name = name;
+        this.address = address;
+    }
+
     public Building(String name, Address address, String telephoneNumber) {
         this.name = name;
         this.address = address;
         this.telephoneNumber = telephoneNumber;
-    }
-
-    public Building(String name, Address address) {
-        this.name = name;
-        this.address = address;
     }
 
     public String getName() {

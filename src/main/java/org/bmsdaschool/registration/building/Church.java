@@ -8,14 +8,6 @@ public class Church extends Building {
     private String denomination;
     private String conference;
 
-    public Church(String name, String pastor, Address address, String telephoneNumber, String sabbathSchoolTeacher, String denomination, String conference) {
-        super(name, address, telephoneNumber);
-        this.pastor = pastor;
-        this.sabbathSchoolTeacher = sabbathSchoolTeacher;
-        this.denomination = denomination;
-        this.conference = conference;
-    }
-
     public Church(String name, Address address, String telephoneNumber, String pastor, String denomination) {
         super(name, address, telephoneNumber);
         this.pastor = pastor;

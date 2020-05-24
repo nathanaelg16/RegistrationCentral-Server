@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 import java.text.ParseException;
+import java.util.Arrays;
 
 import static lombok.AccessLevel.PACKAGE;
 import static lombok.AccessLevel.PRIVATE;
@@ -36,6 +37,7 @@ public class RegistrationCentral {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/")
     public ResponseEntity hello(@RequestBody @Valid Parent[] parents) {
+        System.out.println(Arrays.toString(parents));
         service.addParents(parents);
         return ResponseEntity.accepted().build();
     }
@@ -51,8 +53,8 @@ public class RegistrationCentral {
         p.setMobileTelephoneNumber("6466857820");
         p.setWorkTelephoneNumber("6466857820");
         p.setRelationship("Uncle");
-        Church c = new Church("MyGeneration Church", "Pr. Duddley Francois", new Address("111 W 111th St", null, "New York", "NY", 10025), "7185881111", "Marbin Bascombe", "SDA", "Greater New York Conference");
-        p.setChurchAffiliation(c);
+        //Church c = new Church("MyGeneration Church", "Pr. Duddley Francois", new Address("111 W 111th St", null, "New York", "NY", 10025), "7185881111", "Marbin Bascombe", "SDA", "Greater New York Conference");
+        //p.setChurchAffiliation(c);
         p.setAmericanCitizen(true);
         p.setCitizenship("USA");
         return p;
