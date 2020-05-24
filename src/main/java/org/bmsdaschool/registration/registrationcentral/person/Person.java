@@ -1,8 +1,11 @@
 package org.bmsdaschool.registration.registrationcentral.person;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.validation.constraints.NotNull;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
@@ -22,11 +25,11 @@ public class Person {
     @JsonFormat(shape = JsonFormat.Shape.OBJECT)
     private EducationLevel educationLevel;
 
-    public Person(String firstName, String lastName, String middleName, Date dateOfBirth, EducationLevel educationLevel) {
+    public Person(String firstName, String lastName, String middleName, String dateOfBirth, EducationLevel educationLevel) throws ParseException {
         this.firstName = firstName;
         this.lastName = lastName;
         this.middleName = middleName;
-        this.dateOfBirth = dateOfBirth;
+        setDateOfBirth(dateOfBirth);
         this.educationLevel = educationLevel;
     }
 
@@ -58,8 +61,9 @@ public class Person {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDateOfBirth(String dateOfBirth) throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        this.dateOfBirth = format.parse(dateOfBirth);
     }
 
     public EducationLevel getEducationLevel() {

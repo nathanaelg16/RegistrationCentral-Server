@@ -1,6 +1,5 @@
 package org.bmsdaschool.registration.registrationcentral.person.parent;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.bmsdaschool.registration.registrationcentral.building.Address;
 import org.bmsdaschool.registration.registrationcentral.building.Church;
 import org.bmsdaschool.registration.registrationcentral.person.EducationLevel;
@@ -9,7 +8,7 @@ import org.bmsdaschool.registration.registrationcentral.person.Person;
 import org.bmsdaschool.registration.registrationcentral.person.student.Student;
 
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.text.ParseException;
 
 public class Parent extends Person {
     @NotNull
@@ -23,12 +22,15 @@ public class Parent extends Person {
 
     @NotNull
     private String homeTelephoneNumber;
+
+    @NotNull
+    private String mobileTelephoneNumber;
+
     private String workTelephoneNumber;
 
     @NotNull
     private String ssn;
 
-    @JsonFormat(shape = JsonFormat.Shape.OBJECT)
     private MaritalStatus maritalStatus;
 
     private Church churchAffiliation;
@@ -46,39 +48,10 @@ public class Parent extends Person {
     @NotNull
     private String relationship;
 
-    public Parent(String firstName, String lastName, String middleName, Date dateOfBirth, String email, Address homeAddress,
-                  String employerName, String occupation, String homeTelephoneNumber, String workTelephoneNumber,
-                  String ssn, EducationLevel educationLevel, MaritalStatus maritalStatus, Church churchAffiliation,
-                  boolean americanCitizen, String citizenship, Child[] children, Student[] students, String relationship) {
-        super(firstName, lastName, middleName, dateOfBirth, educationLevel);
-        this.email = email;
-        this.homeAddress = homeAddress;
-        this.employerName = employerName;
-        this.occupation = occupation;
-        this.homeTelephoneNumber = homeTelephoneNumber;
-        this.workTelephoneNumber = workTelephoneNumber;
-        this.ssn = ssn;
-        this.maritalStatus = maritalStatus;
-        this.churchAffiliation = churchAffiliation;
-        this.americanCitizen = americanCitizen;
-        this.citizenship = citizenship;
-        this.children = children;
-        this.students = students;
-        this.relationship = relationship;
-    }
+    private String motives;
 
-    public Parent(String firstName, String lastName, String middleName,
-                  Date dateOfBirth, EducationLevel educationLevel, String email, Address homeAddress,
-                  String employerName, String occupation, String homeTelephoneNumber,
-                  String workTelephoneNumber, String relationship) {
+    public Parent(String firstName, String lastName, String middleName, String dateOfBirth, EducationLevel educationLevel) throws ParseException {
         super(firstName, lastName, middleName, dateOfBirth, educationLevel);
-        this.email = email;
-        this.homeAddress = homeAddress;
-        this.employerName = employerName;
-        this.occupation = occupation;
-        this.homeTelephoneNumber = homeTelephoneNumber;
-        this.workTelephoneNumber = workTelephoneNumber;
-        this.relationship = relationship;
     }
 
     public String getRelationship() {
@@ -184,14 +157,30 @@ public class Parent extends Person {
     public void setChildren(Child[] children) {
         this.children = children;
     }
-//
-//    public Student[] getStudents() {
-//        return students;
-//    }
-//
-//    public void setStudents(Student[] students) {
-//        this.students = students;
-//    }
+
+    public Student[] getStudents() {
+        return students;
+    }
+
+    public void setStudents(Student[] students) {
+        this.students = students;
+    }
+
+    public String getMobileTelephoneNumber() {
+        return mobileTelephoneNumber;
+    }
+
+    public void setMobileTelephoneNumber(String mobileTelephoneNumber) {
+        this.mobileTelephoneNumber = mobileTelephoneNumber;
+    }
+
+    public String getMotives() {
+        return motives;
+    }
+
+    public void setMotives(String motives) {
+        this.motives = motives;
+    }
 }
 
 enum MaritalStatus {

@@ -1,6 +1,7 @@
 package org.bmsdaschool.registration.registrationcentral.building;
 
 import org.bmsdaschool.registration.registrationcentral.Log;
+import org.bmsdaschool.registration.registrationcentral.exception.InvalidAddressException;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -80,6 +81,7 @@ public class Address {
     }
 
     private static void loadStates() {
+        Address.states = new ArrayList<>();
         InputStream is = Objects.requireNonNull(ClassLoader.getSystemResourceAsStream("static/bundles/states"));
         Scanner scanner = new Scanner(is);
         String line = scanner.nextLine();
@@ -95,15 +97,13 @@ public class Address {
             Log.log(e);
         }
     }
-}
 
-
-class InvalidAddressException extends Exception {
-    public InvalidAddressException() {
-        super();
-    }
-
-    public InvalidAddressException(String message) {
-        super(message);
+    @Override
+    public String toString() {
+        String addressLine = addressLine1;
+        if (!addressLine2.isEmpty()) addressLine += "\n\t" + addressLine2;
+        return String.format("Address{\n\t%s\n\t%s, %s %d\n}", addressLine, city, state, zipCode);
     }
 }
+
+

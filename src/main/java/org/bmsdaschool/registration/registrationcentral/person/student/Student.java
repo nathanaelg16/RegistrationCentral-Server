@@ -5,7 +5,7 @@ import org.bmsdaschool.registration.registrationcentral.person.Child;
 import org.bmsdaschool.registration.registrationcentral.person.EducationLevel;
 import org.bmsdaschool.registration.registrationcentral.person.parent.Parent;
 
-import java.util.Date;
+import java.text.ParseException;
 import java.util.Objects;
 
 public class Student extends Child {
@@ -21,9 +21,9 @@ public class Student extends Child {
     private StudentDetails studentDetails;
     private HealthInformation healthInformation;
 
-    public Student(String firstName, String lastName, String middleName, Date dateOfBirth, Parent[] parents, EducationLevel currentGrade,
+    public Student(String firstName, String lastName, String middleName, String dateOfBirth, Parent[] parents, EducationLevel currentGrade,
                    EducationLevel applyingForGrade, String startingDate, String ssn, String birthplace,
-                   char gender, Ethnicity ethnicity, String language, Transportation transportation, StudentDetails studentDetails, HealthInformation healthInformation) {
+                   char gender, Ethnicity ethnicity, String language, Transportation transportation, StudentDetails studentDetails, HealthInformation healthInformation) throws ParseException {
         super(firstName, lastName, middleName, dateOfBirth, currentGrade);
         this.parents = parents;
         this.applyingForGrade = applyingForGrade;
