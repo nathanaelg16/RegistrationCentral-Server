@@ -1,4 +1,4 @@
-package org.bmsdaschool.registration.registrationcentral.models.health;
+package org.bmsdaschool.registration.registrationcentral.health;
 
 import java.util.Objects;
 

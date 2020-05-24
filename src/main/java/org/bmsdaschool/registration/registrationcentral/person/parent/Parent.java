@@ -1,28 +1,50 @@
-package org.bmsdaschool.registration.registrationcentral.models.person.parent;
+package org.bmsdaschool.registration.registrationcentral.person.parent;
 
-import org.bmsdaschool.registration.registrationcentral.models.Address;
-import org.bmsdaschool.registration.registrationcentral.models.building.Church;
-import org.bmsdaschool.registration.registrationcentral.models.person.EducationLevel;
-import org.bmsdaschool.registration.registrationcentral.models.person.Child;
-import org.bmsdaschool.registration.registrationcentral.models.person.Person;
-import org.bmsdaschool.registration.registrationcentral.models.person.student.Student;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.bmsdaschool.registration.registrationcentral.building.Address;
+import org.bmsdaschool.registration.registrationcentral.building.Church;
+import org.bmsdaschool.registration.registrationcentral.person.EducationLevel;
+import org.bmsdaschool.registration.registrationcentral.person.Child;
+import org.bmsdaschool.registration.registrationcentral.person.Person;
+import org.bmsdaschool.registration.registrationcentral.person.student.Student;
+//import org.bmsdaschool.registration.registrationcentral.person.student.Student;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class Parent extends Person {
+    @NotNull
     private String email;
+
+    @NotNull
     private Address homeAddress;
+
     private String employerName;
     private String occupation;
+
+    @NotNull
     private String homeTelephoneNumber;
     private String workTelephoneNumber;
+
+    @NotNull
     private String ssn;
+
+    @JsonFormat(shape = JsonFormat.Shape.OBJECT)
     private MaritalStatus maritalStatus;
+
     private Church churchAffiliation;
+
+    @NotNull
     private boolean americanCitizen;
+
+    @NotNull
     private String citizenship;
+
     private Child[] children;
+
     private Student[] students;
+
+    @NotNull
     private String relationship;
 
     public Parent(String firstName, String lastName, String middleName, Date dateOfBirth, String email, Address homeAddress,
@@ -163,14 +185,14 @@ public class Parent extends Person {
     public void setChildren(Child[] children) {
         this.children = children;
     }
-
-    public Student[] getStudents() {
-        return students;
-    }
-
-    public void setStudents(Student[] students) {
-        this.students = students;
-    }
+//
+//    public Student[] getStudents() {
+//        return students;
+//    }
+//
+//    public void setStudents(Student[] students) {
+//        this.students = students;
+//    }
 }
 
 enum MaritalStatus {

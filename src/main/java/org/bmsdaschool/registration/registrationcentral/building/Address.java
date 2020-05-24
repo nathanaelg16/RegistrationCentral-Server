@@ -1,17 +1,28 @@
-package org.bmsdaschool.registration.registrationcentral.models;
+package org.bmsdaschool.registration.registrationcentral.building;
 
 import org.bmsdaschool.registration.registrationcentral.Log;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.*;
 import java.util.*;
 
 public class Address {
     private static ArrayList<String> states;
 
+    @NotNull
     private String addressLine1;
+
     private String addressLine2;
+
+    @NotNull
     private String city;
+
+    @NotNull
     private String state;
+
+    @NotNull
+    @Size(min = 5, max = 5)
     private int zipCode;
 
     public Address(String addressLine1, String addressLine2, String city, String state, int zipCode) throws InvalidAddressException {
@@ -85,6 +96,7 @@ public class Address {
         }
     }
 }
+
 
 class InvalidAddressException extends Exception {
     public InvalidAddressException() {

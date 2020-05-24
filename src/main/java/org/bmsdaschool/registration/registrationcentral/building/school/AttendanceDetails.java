@@ -1,6 +1,6 @@
-package org.bmsdaschool.registration.registrationcentral.models.building.school;
+package org.bmsdaschool.registration.registrationcentral.building.school;
 
-import org.bmsdaschool.registration.registrationcentral.models.person.EducationLevel;
+import org.bmsdaschool.registration.registrationcentral.person.EducationLevel;
 
 public class AttendanceDetails {
     private EducationLevel[] gradesCompleted;

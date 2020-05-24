@@ -1,15 +1,14 @@
-package org.bmsdaschool.registration.registrationcentral.controllers;
+package org.bmsdaschool.registration.registrationcentral;
 
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.bmsdaschool.registration.registrationcentral.models.Registration;
+//import org.bmsdaschool.registration.registrationcentral.Registration;
+import org.bmsdaschool.registration.registrationcentral.person.parent.Parent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -28,5 +27,10 @@ public class RegistrationCentral {
     @Autowired
     RegistrationService service;
 
-
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/")
+    public ResponseEntity hello(@RequestBody @Valid Parent[] parent) {
+        service.addParents(parent);
+        return ResponseEntity.accepted().build();
+    }
 }

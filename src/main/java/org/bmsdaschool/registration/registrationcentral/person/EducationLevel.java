@@ -1,4 +1,4 @@
-package org.bmsdaschool.registration.registrationcentral.models.person;
+package org.bmsdaschool.registration.registrationcentral.person;
 
 public class EducationLevel {
     private Level level;

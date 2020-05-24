@@ -1,9 +1,9 @@
-package org.bmsdaschool.registration.registrationcentral.models.person.student;
+package org.bmsdaschool.registration.registrationcentral.person.student;
 
-import org.bmsdaschool.registration.registrationcentral.models.health.HealthInformation;
-import org.bmsdaschool.registration.registrationcentral.models.person.Child;
-import org.bmsdaschool.registration.registrationcentral.models.person.EducationLevel;
-import org.bmsdaschool.registration.registrationcentral.models.person.parent.Parent;
+import org.bmsdaschool.registration.registrationcentral.health.HealthInformation;
+import org.bmsdaschool.registration.registrationcentral.person.Child;
+import org.bmsdaschool.registration.registrationcentral.person.EducationLevel;
+import org.bmsdaschool.registration.registrationcentral.person.parent.Parent;
 
 import java.util.Date;
 import java.util.Objects;
@@ -46,13 +46,13 @@ public class Student extends Child {
         this.parents = parents;
     }
 
-    public EducationLevel getCurrentGrade() {
-        return getEducationLevel();
-    }
+//    public EducationLevel getCurrentGrade() {
+       // return getEducationLevel();
+   // }
 
-    public void setCurrentGrade(EducationLevel currentGrade) {
-        setEducationLevel(currentGrade);
-    }
+   // public void setCurrentGrade(EducationLevel currentGrade) {
+      //  setEducationLevel(currentGrade);
+    //}
 
     public EducationLevel getApplyingForGrade() {
         return applyingForGrade;

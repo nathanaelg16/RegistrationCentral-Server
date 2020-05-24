@@ -1,7 +1,7 @@
-package org.bmsdaschool.registration.registrationcentral.models;
+package org.bmsdaschool.registration.registrationcentral;
 
-import org.bmsdaschool.registration.registrationcentral.models.person.parent.Parent;
-import org.bmsdaschool.registration.registrationcentral.models.person.student.Student;
+import org.bmsdaschool.registration.registrationcentral.person.parent.Parent;
+import org.bmsdaschool.registration.registrationcentral.person.student.Student;
 
 public class Registration {
     private Parent[] parents;

@@ -1,7 +1,7 @@
-package org.bmsdaschool.registration.registrationcentral.models.building.school;
+package org.bmsdaschool.registration.registrationcentral.building.school;
 
-import org.bmsdaschool.registration.registrationcentral.models.Address;
-import org.bmsdaschool.registration.registrationcentral.models.building.Building;
+import org.bmsdaschool.registration.registrationcentral.building.Address;
+import org.bmsdaschool.registration.registrationcentral.building.Building;
 
 import java.util.Objects;
 

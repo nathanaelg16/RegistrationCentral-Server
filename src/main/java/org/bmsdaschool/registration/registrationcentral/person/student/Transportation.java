@@ -1,4 +1,4 @@
-package org.bmsdaschool.registration.registrationcentral.models.person.student;
+package org.bmsdaschool.registration.registrationcentral.person.student;
 
 public class Transportation {
     private Borough borough;

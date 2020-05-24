@@ -1,4 +1,4 @@
-package org.bmsdaschool.registration.registrationcentral.models.person.student;
+package org.bmsdaschool.registration.registrationcentral.person.student;
 
 enum Ethnicity {
     AFRICAN_AMERICAN,

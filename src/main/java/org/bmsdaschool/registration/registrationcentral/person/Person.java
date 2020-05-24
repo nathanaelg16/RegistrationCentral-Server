@@ -1,13 +1,25 @@
-package org.bmsdaschool.registration.registrationcentral.models.person;
+package org.bmsdaschool.registration.registrationcentral.person;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Objects;
 
 public class Person {
+    @NotNull
     private String firstName;
+
+    @NotNull
     private String lastName;
+
+    @NotNull
     private String middleName;
+
+    @NotNull
     private Date dateOfBirth;
+
+    @JsonFormat(shape = JsonFormat.Shape.OBJECT)
     private EducationLevel educationLevel;
 
     public Person(String firstName, String lastName, String middleName, Date dateOfBirth, EducationLevel educationLevel) {
@@ -73,5 +85,16 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, middleName, dateOfBirth, educationLevel);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", educationLevel='" + educationLevel + '\'' +
+                '}';
     }
 }
