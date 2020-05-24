@@ -1,6 +1,6 @@
 package org.bmsdaschool.registration.registrationcentral.health;
 
-import org.bmsdaschool.registration.registrationcentral.building.HealthClinic;
+import org.bmsdaschool.registration.registrationcentral.building.*;
 
 public class HealthInformation {
     private HealthClinic healthClinic;

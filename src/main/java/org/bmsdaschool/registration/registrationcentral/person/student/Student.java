@@ -46,13 +46,13 @@ public class Student extends Child {
         this.parents = parents;
     }
 
-//    public EducationLevel getCurrentGrade() {
-       // return getEducationLevel();
-   // }
+    public EducationLevel getCurrentGrade() {
+        return getEducationLevel();
+    }
 
-   // public void setCurrentGrade(EducationLevel currentGrade) {
-      //  setEducationLevel(currentGrade);
-    //}
+    public void setCurrentGrade(EducationLevel currentGrade) {
+        setEducationLevel(currentGrade);
+    }
 
     public EducationLevel getApplyingForGrade() {
         return applyingForGrade;
@@ -124,6 +124,14 @@ public class Student extends Child {
 
     public void setStudentDetails(StudentDetails studentDetails) {
         this.studentDetails = studentDetails;
+    }
+
+    public HealthInformation getHealthInformation() {
+        return healthInformation;
+    }
+
+    public void setHealthInformation(HealthInformation healthInformation) {
+        this.healthInformation = healthInformation;
     }
 
     @Override

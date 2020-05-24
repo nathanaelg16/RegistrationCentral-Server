@@ -7,7 +7,6 @@ import org.bmsdaschool.registration.registrationcentral.person.EducationLevel;
 import org.bmsdaschool.registration.registrationcentral.person.Child;
 import org.bmsdaschool.registration.registrationcentral.person.Person;
 import org.bmsdaschool.registration.registrationcentral.person.student.Student;
-//import org.bmsdaschool.registration.registrationcentral.person.student.Student;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;

@@ -29,7 +29,7 @@ public class EducationLevel {
         this.numYearsAttended = numYearsAttended;
     }
 
-    enum Level {
+    public enum Level {
         TK,
         PK,
         K,

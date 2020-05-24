@@ -1,6 +1,6 @@
 package org.bmsdaschool.registration.registrationcentral.person;
 
-import org.bmsdaschool.registration.registrationcentral.building.school.AttendanceDetails;
+import org.bmsdaschool.registration.registrationcentral.person.student.AttendanceDetails;
 import org.bmsdaschool.registration.registrationcentral.building.school.School;
 
 import java.util.Date;

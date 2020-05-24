@@ -1,4 +1,5 @@
-package org.bmsdaschool.registration.registrationcentral.building.school;
+package org.bmsdaschool.registration.registrationcentral.person.student;
+
 
 import org.bmsdaschool.registration.registrationcentral.person.EducationLevel;
 
